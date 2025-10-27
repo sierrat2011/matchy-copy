@@ -13,21 +13,32 @@
 //////////////////////////////////////////////////////////////////////
 var animal = {};
 animal.species = 'cat';
-animal['name'] = 'KeKe'
+animal['name'] = 'KeKe';
+animal['noises'] = [];
+
+console.log(animal);
 
 
 
 //////////////////////////////////////////////////////////////////////
 // Step 2 - Array Creation ///////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
+var noises = [];
+noises[0] = 'meow';
+noises.splice(1, 0, 'lick')
+noises.unshift('yowl')
+noises.push('purr;')
+console.log(noises.length)
+console.log(noises[noises.length-1])
+console.log(noises)
 
 
 //////////////////////////////////////////////////////////////////////
 // Step 3 - Combining Step 1 and 2 ///////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
-
+animal['noises'] = noises
+animal['noises'].push('another noise')
+console.log(animal)
 
 /* *******************************************************************
  * Step 4 - Review
@@ -51,14 +62,39 @@ animal['name'] = 'KeKe'
 //////////////////////////////////////////////////////////////////////
 // Step 6 - A Collection of Animals //////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
-
+var animals = []
+animals.push(animal)
+console.log(animals)
+var duck = { 
+  species: 'duck', 
+  name: 'Jerome', 
+  noises: ['quack', 'honk', 'sneeze', 'woosh'] 
+}
+animals.push(duck)
+var dog = {
+  species: 'dog',
+  name: 'Charlie',
+  noises: ['woof', 'grrr']
+};
+var bee = {
+  species: 'insect',
+  name: 'Buzz',
+  noises: ['buzz', 'bizz']
+};
+animals.push(dog, bee);
+console.log(animals);
+console.log(animals.length)
 
 //////////////////////////////////////////////////////////////////////
 // Step 7 - Making Friends ///////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
-
+var friends = []; // I chose to assign this to an array, I think it better for a simple list of names
+var getRandom = function(array) {
+  return Math.floor(Math.random() * array.length)
+}
+friends.push(getRandom(animals))
+console.log(friends)
+animals[0]['friends'] = friends
 
 /**
  * Nice work! You're done Part 1. Pat yourself on the back and

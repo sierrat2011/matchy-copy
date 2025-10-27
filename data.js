@@ -92,7 +92,7 @@ var friends = []; // I chose to assign this to an array, I think it better for a
 var getRandom = function(array) {
   return Math.floor(Math.random() * array.length)
 }
-friends.push(getRandom(animals))
+friends.push(animals[getRandom(animals)].name)
 console.log(friends)
 animals[0]['friends'] = friends
 
